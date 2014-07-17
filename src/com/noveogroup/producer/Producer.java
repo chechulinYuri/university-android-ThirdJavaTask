@@ -6,5 +6,5 @@ import com.noveogroup.data.Data;
  * Class which produces elements
  */
 public interface Producer {
-    Data produceData();
+    void produceData() throws InterruptedException;
 }
