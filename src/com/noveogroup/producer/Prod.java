@@ -8,7 +8,12 @@ import com.noveogroup.data.*;
  */
 public class Prod implements Producer, Runnable {
 
-    public Thread thread;
+    private Thread thread;
+
+    public Prod() {
+        thread = new Thread(this);
+        thread.start();
+    }
 
     @Override
     public void produceData() throws InterruptedException {

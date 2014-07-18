@@ -9,8 +9,8 @@ import java.util.ArrayList;
  */
 public class Buff implements Buffer {
 
-    public ArrayList<Data> products;
-    public int dataLimit = 5;
+    private ArrayList<Data> products;
+    private int dataLimit = 5;
 
     public Buff() {
         products = new ArrayList<Data>();
@@ -34,5 +34,4 @@ public class Buff implements Buffer {
             return null;
         }
     }
-
 }

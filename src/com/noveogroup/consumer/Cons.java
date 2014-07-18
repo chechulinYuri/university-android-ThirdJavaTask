@@ -10,7 +10,12 @@ import java.lang.*;
  */
 public class Cons implements Consumer, Runnable {
 
-    public Thread thread;
+    private Thread thread;
+
+    public Cons() {
+        thread = new Thread(this);
+        thread.start();
+    }
 
     @Override
     public void consumeData() throws InterruptedException {

@@ -23,14 +23,9 @@ public class Main {
 
         for (int i = 0; i < consumersCount; i++) {
             consumers.add(new Cons());
-            consumers.get(i).thread = new Thread(consumers.get(i));
-            consumers.get(i).thread.start();
         }
         for (int i = 0; i < producersCount; i++) {
             producers.add(new Prod());
-            producers.get(i).thread = new Thread(producers.get(i));
-            producers.get(i).thread.start();
         }
-
     }
 }
