@@ -12,10 +12,11 @@ import java.util.Random;
 public class Main {
 
     public static Buff buffer = new Buff();
-    private static int consumersCount = 3;
-    private static int producersCount = 1;
 
     public static void main(String[] args) {
+
+        int consumersCount = 3;
+        int producersCount = 1;
 
         ArrayList<Cons> consumers = new ArrayList<Cons>();
         ArrayList<Prod> producers = new ArrayList<Prod>();
