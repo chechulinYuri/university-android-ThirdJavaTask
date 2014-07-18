@@ -10,15 +10,16 @@ import java.lang.*;
  */
 public class Cons implements Consumer, Runnable {
 
+    public Thread thread;
+
     @Override
     public void consumeData() throws InterruptedException {
         synchronized (Main.buffer) {
-            while (Main.buffer.dataCount <= 0) {
+            while (Main.buffer.takeData() == null) {
                 System.out.println("I can't consume data, buffer is empty!");
                 Main.buffer.wait();
             }
 
-            Main.buffer.dataCount--;
             System.out.println("Data consume!");
             Main.buffer.notifyAll();
         }
@@ -29,7 +30,7 @@ public class Cons implements Consumer, Runnable {
         while (true) {
             try {
                 consumeData();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 System.out.println(e.toString());
             }
